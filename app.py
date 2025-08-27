@@ -4,6 +4,24 @@ import datetime
 from io import BytesIO
 
 st.set_page_config(page_title="Configurador de Pedidos", layout="wide")
+
+# ===== Logo centralizada =====
+import os
+import streamlit as st
+
+st.set_page_config(page_title="Configurador de Pedidos", layout="wide")
+
+# Espaço negativo (empurra a logo mais pra cima)
+st.markdown("\n\n", unsafe_allow_html=True)
+
+LOGO_PATH = os.path.join(os.getcwd(), "logo_inicio.png")
+
+if os.path.exists(LOGO_PATH):
+    st.image(LOGO_PATH, width=400)
+else:
+    st.warning("Logo não encontrada.")
+
+# ===== Título =====
 st.title("Configurador de Pedidos")
 
 st.markdown("""
@@ -13,7 +31,6 @@ Gera Excel com colunas:
 Regras:
 - TPVENDA = 2 (fixo)
 - DTPRAZO = data de criação + 15 dias
-- Descontos: até 5 se código começar com 01/02/03, senão apenas 1.
 """)
 
 PLANILHA_FIXA = "tabelas_de_preço_nova.xlsx"
@@ -154,7 +171,7 @@ selected_casa_desc = casas_display.loc[idx_casa, "DESCRICAO_CM"] if idx_casa != 
 
 # ====== Componentes ======
 st.markdown("---")
-st.header("3) Componentes opcionais")
+st.header("3) Componentes opcionais para casa de máquina")
 componentes_codigos = {
     "Interruptor Bipolar": "07001001",
     "Kit By Pass": "07001002",
