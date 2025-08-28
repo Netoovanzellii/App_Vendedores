@@ -4,12 +4,39 @@ import datetime
 from io import BytesIO
 
 st.set_page_config(page_title="Configurador de Pedidos", layout="wide")
+st.markdown("""
+<style>
+/* Tamanho da fonte do selectbox fechado */
+div[data-baseweb="select"] > div {
+    font-size: 11px !important;
+}
 
+/* Tamanho da fonte das opções do dropdown */
+div[data-baseweb="select"] span[role="option"] {
+    font-size: 11px !important;
+    white-space: normal !important;  /* permite quebra de linha */
+}
+</style>
+""", unsafe_allow_html=True)
 # ===== Logo centralizada =====
 import os
 import streamlit as st
 
 st.set_page_config(page_title="Configurador de Pedidos", layout="wide")
+st.markdown("""
+<style>
+/* Tamanho da fonte do selectbox fechado */
+div[data-baseweb="select"] > div {
+    font-size: 11px !important;
+}
+
+/* Tamanho da fonte das opções do dropdown */
+div[data-baseweb="select"] span[role="option"] {
+    font-size: 11px !important;
+    white-space: normal !important;  /* permite quebra de linha */
+}
+</style>
+""", unsafe_allow_html=True)
 
 # Espaço negativo (empurra a logo mais pra cima)
 st.markdown("\n\n", unsafe_allow_html=True)
